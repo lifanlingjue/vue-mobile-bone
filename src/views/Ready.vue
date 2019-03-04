@@ -1,9 +1,5 @@
 <template>
-  <transition name="van-slide-right" v-if="isReady">
-    <keep-alive>
-      <router-view />
-    </keep-alive>
-  </transition>
+  <router-view v-if="isReady" />
 </template>
 <script>
 import { mapMutations } from 'vuex'
@@ -35,7 +31,7 @@ export default {
           duration: 0, // 持续展示 toast
           forbidClick: true, // 禁用背景点击
           loadingType: 'spinner',
-          message: this.$t('loading')
+          message: this.$t('tip.appLoading')
         }
       )
       this.$axios

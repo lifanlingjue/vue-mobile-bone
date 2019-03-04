@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view />
+    <transition name="van-slide-right">
+      <router-view />
+    </transition>
   </div>
 </template>
 

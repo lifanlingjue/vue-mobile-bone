@@ -52,6 +52,13 @@ let app = {
     /** 设置是否有首页权限标识 */
     setShowDashboardFlag (state, flag) {
       state.isShowDashboard = flag
+    },
+    logout (state, Vue) {
+      state.appToken = ''
+      localStorage.removeItem('appToken')
+      Vue.$router.replace({
+        name: 'login'
+      })
     }
   },
   actions: {

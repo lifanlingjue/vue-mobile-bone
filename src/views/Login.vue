@@ -1,5 +1,5 @@
 <template>
-  <div class="login_wrapper c_flex c_a_center c_j_center">
+  <div class="login_wrapper c_flex c_a_center c_j_center" @keydown.enter="handleLogin">
     <div class="login_container">
       <div class="appName">Vue-mobile-bone</div>
       <van-cell-group>
@@ -58,7 +58,7 @@ export default {
           // 获取 token 并保存至 vuex 中
           let token = respData.access_token
           this.$store.commit('updateAccessToken', token)
-          this.$router.replace({ name: 'home' })
+          this.$router.replace({ name: 'dashboard', query: { active: 0 } })
         })
         .finally(() => {
           this.loadingFlag = false
