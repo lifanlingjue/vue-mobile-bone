@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Ready from '@/views/Ready'
+
 Vue.use(Router)
 let router = new Router({
   scrollBehavior: () => {
@@ -11,7 +13,17 @@ let router = new Router({
   routes: [{
     path: '/login',
     name: 'login',
-    component: () => import('../views/Login.vue')
+    component: () => import('@/views/Login.vue')
+  }, {
+    path: '/',
+    name: 'app',
+    redirect: '/home',
+    component: Ready,
+    children: [{
+      path: '/home',
+      name: 'home',
+      component: () => import('@/views/Home')
+    }]
   }]
 })
 
