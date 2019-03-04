@@ -25,6 +25,7 @@ let router = new Router({
     children: [{
       path: '/home',
       name: 'home',
+      redirect: '/dashboard',
       component: () => import('@/views/Home'),
       children: [{
         path: '/dashboard',

@@ -1,3 +1,11 @@
+/**
+ * @description:  header content footer 封装
+                  navConfig: nav配置，left、right为数组 接收文字/图标
+                            title: 非必须，若未传参数，则取tabbar的name
+                  tabConfig：tab配置，tabs为数组，接收图标/文字/路由信息
+                            active: 必须，指定当前高亮的tab
+ * @prop {navConfig, tabConfig} 非必须，若未传入参数，则走slot插槽
+ */
 <template>
   <div class="page-wrapper c_flex c_direction_v">
     <van-nav-bar v-if="navConfig" :title="navConfig.title || this.tabConfig.tabs[this.tabConfig.active].name">
