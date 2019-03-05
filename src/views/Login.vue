@@ -1,6 +1,6 @@
 <template>
-  <div class="login_wrapper" @keydown.enter="handleLogin">
-    <div class="login_container">
+  <div class="login__wrapper" @keydown.enter="handleLogin">
+    <div class="login__container">
       <div class="appName">Vue-mobile-bone</div>
       <van-cell-group>
         <van-field v-model="loginFormModel.username" clearable :placeholder="$t('login.userNamePlaceholder')">
@@ -10,7 +10,7 @@
           <van-icon slot="left-icon" class-prefix="iconfont" name="password" />
         </van-field>
       </van-cell-group>
-      <van-button class="login_button" size="large" :text="$t('login.login')" type="info" :loading-text="$t('login.logging')" :loading="loadingFlag" @click="handleLogin" />
+      <van-button class="login__button" size="large" :text="$t('login.login')" type="info" :loading-text="$t('login.logging')" :loading="loadingFlag" @click="handleLogin" />
     </div>
   </div>
 </template>
@@ -68,14 +68,14 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.login_wrapper {
+.login__wrapper {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-image: url("../assets/login_bg.png");
   background-size: cover;
-  .login_container {
+  .login__container {
     width: 350px;
     .appName {
       margin-bottom: 40px;
@@ -83,7 +83,7 @@ export default {
       font-size: 35px;
       text-align: center;
     }
-    .login_button {
+    .login__button {
       margin-top: 10px;
     }
   }
