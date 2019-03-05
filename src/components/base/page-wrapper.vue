@@ -7,7 +7,7 @@
  * @prop {navConfig, tabConfig} 非必须，若未传入参数，则走slot插槽
  */
 <template>
-  <div class="page-wrapper c_flex c_direction_v">
+  <div class="page-wrapper">
     <van-nav-bar v-if="navConfig" :title="navConfig.title || this.tabConfig.tabs[this.tabConfig.active].name">
       <template v-if="navConfig.left">
         <template v-for="(left, index) in navConfig.left">
@@ -45,6 +45,8 @@ export default {
 <style lang="less" scoped>
 .page-wrapper {
   height: 100%;
+  display: flex;
+  flex-direction: column;
   .van-nav-bar {
     background-image: url("../../assets/nav_bg.png");
     background-size: cover;
@@ -59,6 +61,7 @@ export default {
     }
   }
   .content {
+    flex: 1;
     position: relative;
     overflow: auto;
     -webkit-overflow-scrolling: touch;

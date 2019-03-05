@@ -1,5 +1,5 @@
 <template>
-  <div class="login_wrapper c_flex c_a_center c_j_center" @keydown.enter="handleLogin">
+  <div class="login_wrapper" @keydown.enter="handleLogin">
     <div class="login_container">
       <div class="appName">Vue-mobile-bone</div>
       <van-cell-group>
@@ -70,6 +70,9 @@ export default {
 <style lang="less" scoped>
 .login_wrapper {
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("../assets/login_bg.png");
   background-size: cover;
   .login_container {
