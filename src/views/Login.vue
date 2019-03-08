@@ -58,7 +58,7 @@ export default {
           // 获取 token 并保存至 vuex 中
           let token = respData.access_token
           this.$store.commit('updateAccessToken', token)
-          this.$router.replace({ name: 'dashboard', query: { active: 0 } })
+          this.$router.replace({ name: 'home' })
         })
         .finally(() => {
           this.loadingFlag = false

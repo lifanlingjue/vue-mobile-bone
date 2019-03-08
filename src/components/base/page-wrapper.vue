@@ -1,6 +1,6 @@
 <template>
   <div class="page__wrapper">
-    <van-nav-bar v-if="navConfig" :title="navConfig.title || this.tabConfig.tabs[this.tabConfig.active].name">
+    <van-nav-bar v-if="navConfig" v-bind="navConfig" v-on="navConfig.event" :title="navConfig.title || this.tabConfig.tabs[this.tabConfig.active].name">
       <template v-if="navConfig.left">
         <template v-for="(left, index) in navConfig.left">
           <van-icon v-if="left.type === 'icon'" class="nav_button" v-bind="left.componentProp" :name="left.name" slot="left" :key="index" @click="left.click" />
@@ -16,7 +16,7 @@
     </van-nav-bar>
     <slot v-else name="header"></slot>
 
-    <div class="content">
+    <div class="content" :class="{[contentClass]: !!contentClass}">
       <slot name="content"></slot>
     </div>
 
@@ -33,12 +33,14 @@
                             title: 非必须，若未传参数，则取tabbar的name
                   tabConfig：tab配置，tabs为数组，接收图标/文字/路由信息
                             active: 必须，指定当前高亮的tab
+                  content-class: 配置content的class名
  * @prop {navConfig, tabConfig} 非必须，若未传入参数，则走slot插槽
  */
 export default {
   props: {
     navConfig: Object,
-    tabConfig: Object
+    tabConfig: Object,
+    contentClass: String
   }
 }
 </script>
@@ -58,6 +60,10 @@ export default {
       display: inline-block;
       height: 100%;
       margin: 0 5px;
+    }
+    .van-icon,
+    .van-nav-bar__text {
+      color: #ffffff;
     }
   }
   .content {

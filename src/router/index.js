@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Ready from '@/views/Ready'
-
 // 引入子集文件
-import user from '@/views/user/module-config/router'
+import Home from '@/views/Home/module-config/router'
 
 Vue.use(Router)
 let router = new Router({
@@ -17,25 +15,9 @@ let router = new Router({
     path: '/login',
     name: 'login',
     component: () => import('@/views/Login.vue')
-  }, {
-    path: '/',
-    name: 'app',
-    redirect: '/home',
-    component: Ready,
-    children: [{
-      path: '/home',
-      name: 'home',
-      redirect: '/dashboard',
-      component: () => import('@/views/Home'),
-      children: [{
-        path: '/dashboard',
-        name: 'dashboard',
-        component: () => import('@/views/Dashboard')
-      },
-      ...user
-      ]
-    }]
-  }]
+  },
+  ...Home
+  ]
 })
 
 export default router
