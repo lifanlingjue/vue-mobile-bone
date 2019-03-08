@@ -1,39 +1,54 @@
-# vue-mobile-bone
+## VUE-MOBILE-BONE
 
-## Project setup
-```
+> 本工程基于 vue + vantUI + vuex 搭建一套前端移动端的基础开发框架
+
+## **环境准备**
+
+适配 vue-cli@3.x
+
+- git
+- vue-cli
+- node@^8.12.0(development)
+
+## **快速构建**
+
+### **开发环境启动**
+
+```bash
+# 获取repo
+git clone https://github.com/lifanlingjue/vue-mobile-bone.git
+# 安装依赖
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
+# 运行前端服务
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
+### **生产环境部署**
+
+```bash
+# 工程打包
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
+## **功能文档**
+
+```bash
+# 已实现功能
+- 登录
+- 多语言支持
+- 数据字典
+# 计划内实现功能
+- 多级菜单
+- 表单组件高度封装
+- list页JSON配置化
+- 完善工程使用说明文档
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## **贡献者**
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
+- [Lixiang](https://github.com/lifanlingjue)
 
-### Run your unit tests
-```
-npm run test:unit
-```
+## **特别感谢**
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [Vue](https://github.com/vuejs/vue)
+- [Vant](https://github.com/youzan/vant)
