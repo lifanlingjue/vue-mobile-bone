@@ -6,6 +6,9 @@ import i18n from './i18n'
 import axios from './axios'
 import dictionary from './dictionary'
 
+// rem适配
+import 'amfe-flexible'
+
 // 引入Vant组件库
 import Vant from 'vant'
 import 'vant/lib/index.css'

@@ -10,6 +10,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
     "axios": "^0.18.0",
     "normalize.css": "^8.0.1",
     "vant": "^1.6.7",

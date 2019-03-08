@@ -6,6 +6,14 @@
 
 **Improvements**
 
+- 取消原有 rem 适配，引入 amfe-flexible 库适配 rem
+
+## v0.0.4
+
+`2019-03-08`
+
+**Improvements**
+
 - 引入字典翻译
 - 完善 page-wrapper 组件：增加 content-class 自定义类名 prop
 - 增加部分常用 i18n
