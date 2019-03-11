@@ -4,6 +4,7 @@ export default {
     title: '首页'
   },
   myInfo: {
-    title: '个人信息'
+    title: '个人信息',
+    formExample: '表单组件示例'
   }
 }

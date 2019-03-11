@@ -1,5 +1,21 @@
 ## 更新日志
 
+## v0.1.0
+
+`2019-03-11`
+
+**Improvements**
+
+- 增加 Example 模块
+- 增加表单组件实例页面
+- 封装 simple-form v1.0
+- 引入 vee-validate 表单校验库
+
+**Bug Fixes**
+
+- 恢复 normalize.css 初始化
+- login.vue 表单加入 center 属性
+
 ## v0.0.4
 
 `2019-03-08`

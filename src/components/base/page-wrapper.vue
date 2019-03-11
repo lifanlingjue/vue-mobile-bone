@@ -67,6 +67,7 @@ export default {
     }
   }
   .content {
+    background: #f1f6f9;
     flex: 1;
     position: relative;
     overflow: auto;

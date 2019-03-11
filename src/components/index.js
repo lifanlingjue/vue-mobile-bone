@@ -1,6 +1,8 @@
 import pageWrapper from './base/page-wrapper'
+import simpleForm from './base/simple-form/simple-form'
 const components = {
-  pageWrapper
+  pageWrapper,
+  simpleForm
 }
 
 let install = (Vue) => {

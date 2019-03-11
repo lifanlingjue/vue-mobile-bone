@@ -1,5 +1,6 @@
 // 引入子集模块
 import Home from '@/views/Home/module-config/locale/zh-CN'
+import Example from '@/views/Example/module-config/locale/zh-CN'
 
 export default {
   tip: {
@@ -27,5 +28,6 @@ export default {
     userNamePlaceholder: '请输入用户名',
     passwordPlaceholder: '请输入密码'
   },
-  ...Home
+  ...Home,
+  ...Example
 }

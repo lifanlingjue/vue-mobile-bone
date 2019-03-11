@@ -3,10 +3,10 @@
     <div class="login__container">
       <div class="appName">Vue-mobile-bone</div>
       <van-cell-group>
-        <van-field v-model="loginFormModel.username" clearable :placeholder="$t('login.userNamePlaceholder')">
+        <van-field v-model="loginFormModel.username" center clearable :placeholder="$t('login.userNamePlaceholder')">
           <van-icon slot="left-icon" class-prefix="iconfont" name="account" />
         </van-field>
-        <van-field v-model="loginFormModel.password" clearable :placeholder="$t('login.passwordPlaceholder')" v-bind="passwordType" @click-right-icon="viewPasswordFlag = !viewPasswordFlag">
+        <van-field v-model="loginFormModel.password" center clearable :placeholder="$t('login.passwordPlaceholder')" v-bind="passwordType" @click-right-icon="viewPasswordFlag = !viewPasswordFlag">
           <van-icon slot="left-icon" class-prefix="iconfont" name="password" />
         </van-field>
       </van-cell-group>
