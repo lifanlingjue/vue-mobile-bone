@@ -11,14 +11,21 @@
         </template>
         <template v-else>
           <van-field v-if="formItem.type === 'Input'" v-model="value[formItem.prop]" v-validate="formItem.vValidate" :key="index" :label="formItem.label" :name="formItem.prop" :error-message="errors.first(formItem.prop, 'simple-form')" clearable input-align="right" v-bind="formItem.component" v-on="formItem.event" />
+          <popup-picker v-else-if="formItem.type === 'Select'" v-model="value[formItem.prop]" v-validate="formItem.vValidate" :key="index" :name="formItem.prop" :error-message="errors.first(formItem.prop, 'simple-form')" :formField="formItem"></popup-picker>
+          <popup-datetime-picker v-else-if="formItem.type === 'DatetimePicker'" v-model="value[formItem.prop]" v-validate="formItem.vValidate" :key="index" :name="formItem.prop" :error-message="errors.first(formItem.prop, 'simple-form')" :formField="formItem"></popup-datetime-picker>
+          <van-switch-cell v-else-if="formItem.type === 'Switch'" v-model="value[formItem.prop]" :key="index" :title="formItem.label" v-bind="formItem.component" v-on="formItem.event" />
+          <van-cell v-else value="无此类型控件，请您确认后进行修改！" :key="index"></van-cell>
         </template>
       </template>
     </template>
   </form>
 </template>
 <script>
+import popupPicker from './popup-picker'
+import popupDatetimePicker from './popup-datetime-picker'
 export default {
   name: 'simple-form',
+  components: { popupPicker, popupDatetimePicker },
   props: {
     value: { type: Object, required: true },
     /**

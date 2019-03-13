@@ -13,13 +13,13 @@ export default {
     formField () {
       return [
         {
-          prop: 'formExample',
-          label: this.$t('myInfo.formExample'),
+          prop: 'aboutUs',
+          label: this.$t('myInfo.aboutUs'),
           viewFlag: true,
           component: {
             clickable: true,
-            isLink: true,
-            to: { name: 'formExample' }
+            isLink: true
+            // to: { name: 'aboutUs' }
           }
         }
       ]

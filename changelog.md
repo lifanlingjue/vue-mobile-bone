@@ -1,5 +1,15 @@
 ## 更新日志
 
+## v0.1.1
+
+`2019-03-13`
+
+**Improvements**
+
+- simple-form 增加 Select、Datetime、Switch 控件
+- 封装 popup-picker、popup-datetime-picker 组件，支持字段回显
+- 引入 moment.js 时间插件
+
 ## v0.1.0
 
 `2019-03-11`

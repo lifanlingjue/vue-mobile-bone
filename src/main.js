@@ -26,6 +26,8 @@ import utils from './utils'
 // 引入VeeValidate校验 + 自定义校验规则
 import validator from './validator'
 
+import moment from 'moment'
+
 Vue.use(dictionary)
 Vue.use(Vant)
 Vue.use(customComponent)
@@ -34,6 +36,7 @@ Vue.use(validator, i18n)
 // 配置全局变量
 Vue.prototype.$axios = axios
 Vue.prototype.$utils = utils
+Vue.prototype.$moment = moment
 Vue.config.productionTip = false
 
 new Vue({

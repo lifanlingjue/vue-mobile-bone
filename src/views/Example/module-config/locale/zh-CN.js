@@ -4,6 +4,10 @@ export default {
     validate: '校验',
     viewFlag: '只读',
     input: 'Input',
-    mobile: '自定义校验'
+    mobile: '自定义校验',
+    select: 'Select',
+    datetimePicker: 'Datetime选择器',
+    datePicker: 'Date选择器',
+    switch: 'Switch开关'
   }
 }

@@ -1,10 +1,9 @@
 <template>
   <page-wrapper :navConfig="navConfig">
     <template slot="content">
-      <simple-form v-model="formModel" :formField="formField" ref="test"></simple-form>
+      <simple-form v-model="formModel" :formField="formField" ref="simple-form"></simple-form>
     </template>
     <van-button slot="footer" size="large" :text="$t('formExample.validate')" type="info" @click="validate" />
-
   </page-wrapper>
 </template>
 <script>
@@ -24,7 +23,8 @@ export default {
       },
       formModel: {
         viewFlag: '我是只读Field',
-        input: 'Click me to input'
+        input: 'Click me to input',
+        switch: 'Y'
       }
     }
   },
@@ -54,15 +54,61 @@ export default {
           component: {
             required: true
           }
+        },
+        {
+          prop: 'select',
+          type: 'Select',
+          label: this.$t('formExample.select'),
+          vValidate: 'required',
+          component: {
+            // columns 的数据结构必须包含 value、label
+            columns: this.$getDictList('quarter'),
+            required: true
+          }
+        },
+        {
+          prop: 'datetimePicker',
+          type: 'DatetimePicker',
+          label: this.$t('formExample.datetimePicker'),
+          vValidate: 'required',
+          component: {
+            required: true
+          }
+        },
+        {
+          prop: 'datePicker',
+          type: 'DatetimePicker',
+          label: this.$t('formExample.datePicker'),
+          vValidate: 'required',
+          component: {
+            type: 'date',
+            // format 为自定义属性，声明显示、绑定值的格式，规则遵从moment.js
+            format: 'YYYY-MM-DD',
+            required: true
+          }
+        },
+        {
+          prop: 'switch',
+          type: 'Switch',
+          label: this.$t('formExample.switch'),
+          component: {
+            activeValue: 'Y',
+            inactiveValue: 'N'
+          }
         }
       ]
     }
   },
   methods: {
     validate () {
-      this.$refs.test.validate()
+      console.log(this.formModel)
+      this.$refs['simple-form'].validate()
         .then(valid => {
-          debugger
+          if (!valid) {
+            this.$notify('校验未通过！')
+          } else {
+            this.$notify({ message: '校验通过，请进行下一步操作！', background: '#07c160' })
+          }
         })
     }
   }

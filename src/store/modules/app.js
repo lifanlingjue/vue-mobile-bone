@@ -37,7 +37,6 @@ let app = {
 
       let sysPermission = []
       getPermisson(sysMenu, sysPermission)
-      console.log(sysPermission)
 
       state.sysPermission = sysPermission
     },

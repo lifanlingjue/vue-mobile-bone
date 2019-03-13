@@ -5,6 +5,6 @@ export default {
   },
   myInfo: {
     title: '个人信息',
-    formExample: '表单组件示例'
+    aboutUs: '关于我们'
   }
 }
